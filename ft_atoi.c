@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int		ft_atoi_in(const char *str, int flag, int count);
+
 int		ft_atoi(const char *str)
 {
 	int		flag;
@@ -17,8 +21,9 @@ int		ft_atoi(const char *str)
 	int		count;
 
 	flag = 1;
-	digit = 0;
 	count = 0;
+	if (str == NULL)
+		return (0);
 	while (*str && (*str == ' ' || *str == '\n' || *str == '\t'
 				|| *str == '\r' || *str == '\f' || *str == '\v'))
 		str++;
@@ -28,6 +33,15 @@ int		ft_atoi(const char *str)
 			flag = -1;
 		count++;
 	}
+	digit = ft_atoi_in(str, flag, count);
+	return (digit * flag);
+}
+
+int		ft_atoi_in(const char *str, int flag, int count)
+{
+	int		digit;
+
+	digit = 0;
 	while (*str && (*str >= '0' && *str <= '9'))
 	{
 		if (count++ >= 19 && flag == 1)
@@ -36,5 +50,5 @@ int		ft_atoi(const char *str)
 			return (0);
 		digit = digit * 10 + *str++ - '0';
 	}
-	return (digit * flag);
+	return (digit);
 }

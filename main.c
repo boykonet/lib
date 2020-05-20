@@ -31,6 +31,11 @@ void	ft_lstprint(t_list **lst)
 	}
 }
 
+void	ft_f(void *content)
+{
+	printf("ft_f: %d\n", *(int*)content);
+}
+
 int		main()
 {
 //	ft_atoi!!!!!!!
@@ -172,7 +177,7 @@ int		main()
 	unsigned char str1[] = "1234567890";
 	unsigned char src2[] = "1234567890";
 	unsigned char str2[] = "1234567890";
-	size_t	len = 7;
+	size_t	len = 3;
 
 	memmove(&src1[4], &src1[3], len);
 	printf("memmove %s\n", src1);
@@ -429,9 +434,9 @@ int		main()
 
 //	ft_itoa
 
-/*	int		c = -12309380; 
+/*	int		c = -22;
 
-	printf("%s\n", ft_itoa((int)NULL));*/
+	printf("%s\n", ft_itoa(c));*/
 
 
 
@@ -448,7 +453,7 @@ int		main()
 /*	int		fd;
 	char	c = 'a';
 
-	fd = open("len.txt", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
+	fd = open("len", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
 	if (fd == -1)
 	{
 		printf("Error open()");
@@ -468,7 +473,7 @@ int		main()
 /*	int		fd;
 	char	c[] = "abcdef";
 
-	fd = open("len.txt", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
+	fd = open("len", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
 	if (fd == -1)
 	{
 		printf("Error open()");
@@ -481,12 +486,12 @@ int		main()
 		return (1);
 	}*/
 
-//ft_putstr_fd
+//ft_putendl_fd
 
 /*	int		fd;
 	char	c[] = "abcdef";
 
-	fd = open("len.txt", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
+	fd = open("len", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
 	if (fd == -1)
 	{
 		printf("Error open()");
@@ -504,9 +509,9 @@ int		main()
 //	ft_putnbr_fd
 
 /*	int		fd;
-	int		c = -123;
+	int		c = 2147483647;
 
-	fd = open("len.txt", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
+	fd = open("len", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
 	if (fd == -1)
 	{
 		printf("Error open()");
@@ -535,10 +540,10 @@ int		main()
 
 //	ft_strtrim
 	
-	char const	str[] = "123abc123";
+/*	char const	str[] = "123abc123";
 	char const	set[] = "12";
 
-	printf("%s\n", ft_strtrim(str, set));
+	printf("%s\n", ft_strtrim(str, set));*/
 
 	
 
@@ -549,15 +554,30 @@ int		main()
 	t_list	*lst3;
 	t_list	*lst4;
 	t_list	*lst5;
-	t_list	*result;
+
+//	t_list	*result;
 	int		a = 1;
 	int		b = 2;
 	int		c = 3;
 	int		d = 4;
-	int		e = 5;
-	int		count;
+	int		e = 5;*/
+//	int		count;
+	
+/*	lst1 = ft_lstnew(&a);
+	lst2 = ft_lstnew(&b);
+	lst3 = ft_lstnew(&c);
+	lst4 = ft_lstnew(&d);
+	lst5 = ft_lstnew(&e);
 
-	lst1 = ft_lstnew(&a);
+	ft_lstadd_back(&lst1, lst2);
+	ft_lstadd_back(&lst1, lst3);
+	ft_lstadd_back(&lst1, lst4);
+	ft_lstadd_back(&lst1, lst5);
+	ft_lstprint(&lst1);
+
+	ft_lstiter(lst1, &ft_f);*/
+
+	/*lst1 = ft_lstnew(&a);
 	lst2 = ft_lstnew(&b);
 	ft_lstadd_front(&lst1, lst2);
 	lst3 = ft_lstnew(&c);

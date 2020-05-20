@@ -21,7 +21,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	ch = (unsigned char)c;
 	str = (const char*)s;
 	nmb = n;
-	if (nmb == 0 || str == NULL)
+	if (str == NULL)
+		return (NULL);
+	if (nmb == 0)
 		return (0);
 	else
 	{

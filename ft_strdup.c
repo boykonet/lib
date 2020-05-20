@@ -18,10 +18,12 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
+	if (s1 == NULL)
+		return (NULL);
 	while (s1[i] != '\0')
 		i++;
 	dupl = (char*)malloc(sizeof(char) * (i + 1));
-	if (!dupl)
+	if (dupl == NULL)
 	{
 		errno = ENOMEM;
 		return (NULL);

@@ -21,14 +21,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	d = (char*)dst;
 	s = (const char*)src;
 	size = dstsize;
-	if ((void*)s == NULL || (void*)d == NULL)
+	if (s == NULL || d == NULL || (*s == '\0') || (*d == '\0'))
 		return (0);
 	if (size != 0)
 	{
 		while (--size && *s)
-		{
 			*d++ = *s++;
-		}
 	}
 	if (size == 0)
 	{

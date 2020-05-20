@@ -21,6 +21,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	str1 = (const char*)s1;
 	str2 = (const char*)s2;
 	nmb = n;
+	if (str1 == NULL || str2 == NULL)
+		return (-1);
 	if (nmb == 0)
 		return (0);
 	else

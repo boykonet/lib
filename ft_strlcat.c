@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	d = (char*)dst;
 	s = (const char*)src;
+	if (d == NULL || s == NULL || (*d == '\0') || (*s == '\0'))
+		return (0);
 	size = dstsize;
 	while (*d++ != '\0')
 		size--;

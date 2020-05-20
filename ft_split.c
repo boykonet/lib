@@ -62,7 +62,7 @@ char	**ft_split_in(char **dst, char const *s, const char div, size_t ch)
 		if (dst[i] == NULL)
 		{
 			while (i >= 0)
-				free(dst[i--]);
+				free(dst[--i]);
 			return (NULL);
 		}
 		count = 0;
