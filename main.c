@@ -1,3 +1,14 @@
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <strings.h>
+#include <ctype.h>
+#include <errno.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include "libft.h"
 
 char	ft_func(unsigned int c, char a)
@@ -68,7 +79,9 @@ int		main()
 	printf("14 %d\n", ft_atoi("-2222222222222222222222"));
 	printf("14 %d\n", atoi("-2222222222222222222222"));
 	printf("15 %d\n", ft_atoi("22222222222222222222"));
-	printf("15 %d\n", atoi("22222222222222222222"));*/
+	printf("15 %d\n", atoi("22222222222222222222"));
+	printf("16 %d\n", ft_atoi("-99999999999999999999999999             "));
+	printf("16 %d\n", atoi("-99999999999999999999999999             "));*/
 
 
 
@@ -77,8 +90,8 @@ int		main()
 /*	char str[] = "This is string.h library function";
 	char tmp[] = "This is string.h library function";
 
-	ft_memset(str, '$', 7);
-	memset(tmp, '$', 7);
+	ft_memset(str, 'A', 7);
+	memset(tmp, 'A', 7);
 	for (int i = 0; str[i] != '\0'; i++)
 		printf("%c", str[i]);
 	printf("\n");
@@ -149,8 +162,12 @@ int		main()
 
 
 //	ft_memccpy!!!!!
-	
-/*	unsigned char array1[40] = "2345678910000";
+
+/*	unsigned char src1[] = "12345";
+	unsigned char src2[] = "12345";
+
+
+	unsigned char array1[40] = "2345678910000";
 	unsigned char dst1[40] = "";
 	unsigned char array2[40] = "2345678910000";
 	unsigned char dst2[40] = "";
@@ -167,8 +184,10 @@ int		main()
 
 	memccpy(dst1, array1, '0', 0);
 	ft_memccpy(dst2, array2, '0', 0);
-	printf("%s\n", dst1);
-	printf("%s\n", dst2);*/
+	printf("%s\n", memccpy("", src1, 'm', 0));
+	printf("%s\n", ft_memccpy("", src2, 'm', 0));*/
+//	printf("%s\n", src1);
+//	printf("%s\n", src2);
 
 
 //	ft_memmove
@@ -334,8 +353,8 @@ int		main()
 
 /*	char *str, *tmp;
 
-	str = (char*)calloc(5, sizeof(char));
-	tmp = (char*)ft_calloc(5, sizeof(char));
+	str = (char*)calloc(0, sizeof(char));
+	tmp = (char*)ft_calloc(0, sizeof(char));
 	printf("calloc: %s\n", str);
 	printf("ft_calloc: %s\n", tmp);*/
 
@@ -346,7 +365,29 @@ int		main()
 
 	printf("%s\n", strnstr(big, little, sizeof(big)));
 	printf("%s\n", ft_strnstr(big, little, sizeof(big)));*/
+/*	char	*s1 = "see FF your FF return FF now FF";
+	char	*s2 = "FF";
+	size_t	max = strlen(s1);*/
 
+/*	char	*s1 = "MZIRIBMZIRIBMZE123";
+	char	*s2 = "MZIRIBMZE";
+	size_t	max1 = strlen(s2);
+
+	printf("%s\n", strnstr(s1, s2, max1));
+	printf("%s\n", ft_strnstr(s1, s2, max1));
+
+	char	*s11 = "oh no not the empty string !";
+	char	*s22 = "";
+	size_t	max2 = 0;
+
+	printf("%s\n", strnstr(s11, s22, max2));
+	printf("%s\n", ft_strnstr(s11, s22, max2));
+
+	char	*s111 = "AAAAAAAAAAAAA";
+	size_t	max3 = strlen(s111);
+
+	printf("%s\n", strnstr(s111, s111, max3));
+	printf("%s\n", ft_strnstr(s111, s111, max3));*/
 
 //	ft_strncmp
 
@@ -417,11 +458,11 @@ int		main()
 
 //	ft_substr
 
-/*	char str[] = "aabcdefdgdhgbcbd";
+	char str[] = "aabcdefdgdhgbcbd";
 	char c = 'c';
-	size_t len = 0;
+	size_t len = 5;
 
-	printf("%s\n", ft_substr(str, c, len));*/
+	printf("%s\n", ft_substr(str, c, len));
 
 
 
@@ -434,10 +475,11 @@ int		main()
 
 //	ft_itoa
 
-/*	int		c = -22;
-
-	printf("%s\n", ft_itoa(c));*/
-
+/*	printf("%s\n", ft_itoa(-22));
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(34));
+	printf("%s\n", ft_itoa(-2147483648));
+	printf("%s\n", ft_itoa(2147483647));*/
 
 
 //	ft_strmapi

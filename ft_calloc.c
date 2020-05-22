@@ -22,12 +22,15 @@ void	*ft_calloc(size_t count, size_t size)
 	i = count * size;
 	j = 0;
 	c = 0;
-	str = malloc(i);
-	if (!str)
+	if (i == 0)
 	{
-		errno = ENOMEM;
-		return (NULL);
+		if ((str = malloc(1)) == NULL)
+			return (NULL);
+		str[0] = '\0';
+		return (str);
 	}
+	if ((str = malloc(i)) == NULL)
+		return (NULL);
 	while (--i)
 	{
 		str[j++] = c;

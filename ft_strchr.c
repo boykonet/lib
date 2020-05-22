@@ -19,13 +19,15 @@ char	*ft_strchr(const char *s, int c)
 
 	ch = (unsigned char)c;
 	str = (char*)s;
-	if (str == NULL || *str == '\0')
+	if (str == NULL)
 		return (NULL);
-	while (*str != '\0')
+	while (*str)
 	{
 		if (*str == ch)
 			return (str);
 		str++;
 	}
+	if (*str == ch)
+		return (str);
 	return (NULL);
 }

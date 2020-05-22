@@ -21,17 +21,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	src = s;
 	size = len;
-	count = 1;
+	count = 0;
 	if (src == NULL || len == 0 || *src == '\0')
 		return (NULL);
-	while (*src != (const char)start && *src != '\0')
+	while (*src != (char const)start && *src != '\0')
 		src++;
 	if (*src == '\0')
 		return (NULL);
 	s = src;
 	while (size-- && *src++)
 		count++;
-	dst = (char*)malloc(sizeof(char) * (count + 1));
+	if ((dst = (char*)malloc(sizeof(char) * (count + 1))) == NULL)
+		return (NULL);
 	count = 0;
 	while (len--)
 		dst[count++] = *s++;

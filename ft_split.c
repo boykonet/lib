@@ -12,26 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_chrcnt(const char *s, const char c);
-char	**ft_split_in(char **dst, char const *s, const char div, size_t ch);
-
-char	**ft_split(char const *s, char c)
-{
-	char		**dst;
-	size_t		ch;
-
-	if (s == NULL)
-		return (0);
-	ch = ft_chrcnt(s, c);
-	dst = (char**)malloc(sizeof(char*) * (ch + 1));
-	if (dst == NULL)
-		return (NULL);
-	if ((dst = ft_split_in(dst, s, c, ch)) && dst == NULL)
-		return (NULL);
-	return (dst);
-}
-
-size_t	ft_chrcnt(const char *s, const char c)
+static size_t	ft_chrcnt(const char *s, const char c)
 {
 	size_t	i;
 
@@ -45,7 +26,7 @@ size_t	ft_chrcnt(const char *s, const char c)
 	return (i);
 }
 
-char	**ft_split_in(char **dst, char const *s, const char div, size_t ch)
+static char		**ft_split_in(char **d, char const *s, const char v, size_t ch)
 {
 	char const	*src;
 	size_t		i;
@@ -55,21 +36,37 @@ char	**ft_split_in(char **dst, char const *s, const char div, size_t ch)
 	i = 0;
 	while (ch >= i && *s != '\0')
 	{
-		while (*src != div && *src != '\0')
+		while (*src != v && *src != '\0')
 			src++;
 		count = src - s;
-		dst[i] = (char*)malloc(sizeof(char) * (count + 1));
-		if (dst[i] == NULL)
+		d[i] = (char*)malloc(sizeof(char) * (count + 1));
+		if (d[i] == NULL)
 		{
 			while (i >= 0)
-				free(dst[--i]);
+				free(d[--i]);
 			return (NULL);
 		}
 		count = 0;
 		while (s != src)
-			dst[i][count++] = *s++;
-		dst[i++][count] = '\0';
+			d[i][count++] = *s++;
+		d[i++][count] = '\0';
 		s = ++src;
 	}
+	return (d);
+}
+
+char			**ft_split(char const *s, char c)
+{
+	char		**dst;
+	size_t		ch;
+
+	if (s == NULL)
+		return (0);
+	ch = ft_chrcnt(s, c);
+	dst = (char**)malloc(sizeof(char*) * (ch + 1));
+	if (dst == NULL)
+		return (NULL);
+	if ((dst = ft_split_in(dst, s, c, ch)) && dst == NULL)
+		return (NULL);
 	return (dst);
 }

@@ -28,7 +28,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s2 != s1 && (ft_strrchr(set, *s2) != NULL))
 		s2--;
 	count = s2 - s1 + 1;
-	dst = (char*)malloc(sizeof(char) * (count + 1));
+	if ((dst = (char*)malloc(sizeof(char) * (count + 1))) == NULL)
+		return (NULL);
 	while (count > 0)
 	{
 		dst[i++] = *s1++;

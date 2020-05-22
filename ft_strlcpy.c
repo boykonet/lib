@@ -17,23 +17,26 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	char		*d;
 	const char	*s;
 	size_t		size;
+	size_t		lenght;
 
 	d = (char*)dst;
 	s = (const char*)src;
 	size = dstsize;
-	if (s == NULL || d == NULL || (*s == '\0') || (*d == '\0'))
+	if (s == NULL || d == NULL)
 		return (0);
-	if (size != 0)
+	lenght = ft_strlen(s);
+	if (size > 0)
 	{
-		while (--size && *s)
+		while (size >= 0 && *s != '\0')
+		{
 			*d++ = *s++;
+			size--;
+		}
 	}
 	if (size == 0)
 	{
 		if (dstsize != 0)
 			*d = '\0';
-		while (*s)
-			s++;
 	}
-	return (s - src);
+	return (lenght);
 }
