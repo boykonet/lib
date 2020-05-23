@@ -23,13 +23,11 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	ch = (unsigned char)c;
 	if (s == NULL || d == NULL)
 		return (NULL);
-	if (n == 0)
-		return (dst);
 	while (n)
 	{
 		*d++ = *s;
 		if (*s == ch)
-			return (dst);
+			return (d);
 		s++;
 		n--;
 	}

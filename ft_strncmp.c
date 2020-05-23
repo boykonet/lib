@@ -27,16 +27,13 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (*str1 - *str2);
 	if (len == 0)
 		return (0);
-	if (len != 0)
+	while (len != 0 && *str1 != '\0' && *str2 != '\0' && (*str1 == *str2))
 	{
-		while (len != 0 && *str1 != '\0' && *str2 != '\0' && (*str1 == *str2))
+		if (*str1 == *str2)
 		{
-			if (*str1 == *str2)
-			{
-				str1++;
-				str2++;
-				len--;
-			}
+			str1++;
+			str2++;
+			len--;
 		}
 	}
 	return (*str1 - *str2);

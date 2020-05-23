@@ -12,28 +12,45 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+static char	*ft_strnstr_logic(const char *haystack, const char *needle, size_t l)
 {
-	size_t	lenght;
-	size_t	ch;
+	const char		*h;
+	const char		*n;
+	size_t			len;
 
-	lenght = ft_strlen(needle) - 1;
-	ch = 0;
-	if (haystack == NULL || needle == NULL)
-		return (NULL);
-	if (*haystack == '\0')
-		return (NULL);
-	if (len == 0 || *needle == '\0')
-		return ((char*)haystack);
-	while (len && (haystack[ch] != '\0'))
+	h = haystack;
+	n = needle;
+	while (l && *h != '\0')
 	{
-		if ((ft_memcmp(&haystack[ch], needle, lenght)) == 0)
-			return ((char*)&haystack[ch]);
-		else
+		h = haystack;
+		n = needle;
+		len = l;
+		while (len && ((ft_memcmp(h, n, 1)) == 0) && *h != '\0' && *n != '\0')
 		{
-			ch++;
+			h++;
+			n++;
 			len--;
 		}
+		if (*n == '\0')
+			return ((char*)haystack);
+		haystack++;
+		l--;
 	}
+	return (NULL);
+}
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	const char		*h;
+	const char		*n;
+
+	h = haystack;
+	n = needle;
+	if (h == NULL || n == NULL || (!h && !n))
+		return (NULL);
+	if (len == 0 || *n == '\0')
+		return ((char*)h);
+	if ((h = ft_strnstr_logic(haystack, needle, len)) != NULL)
+		return ((char*)h);
 	return (NULL);
 }

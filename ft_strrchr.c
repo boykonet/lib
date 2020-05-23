@@ -14,25 +14,25 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-    unsigned char    ch;
-    char            *str;
+	unsigned char	ch;
+	char			*str;
 
-    ch = (unsigned char)c;
-    str = (char*)s;
-    if (str == NULL || *str == '\0')
-        return (NULL);
-    if (str != NULL && *str != '\0')
-    {
-        while (*str != '\0')
-        {
-            if (*str == ch)
-                s = (const char*)str;
-            str++;
-        }
-    }
-    if (*str == '\0' && ch == '\0')
-        return (str);
-    else if (*str == '\0' && *s == ch)
-        return ((char*)s);
-    return (NULL);
+	ch = (unsigned char)c;
+	str = (char*)s;
+	if (str == NULL || *str == '\0')
+		return (NULL);
+	if (str != NULL && *str != '\0')
+	{
+		while (*str != '\0')
+		{
+			if (*str == ch)
+				s = (const char*)str;
+			str++;
+		}
+	}
+	if (*str == '\0' && ch == '\0')
+		return (str);
+	else if (*str == '\0' && *s == ch)
+		return ((char*)s);
+	return (NULL);
 }

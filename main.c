@@ -50,7 +50,7 @@ void	ft_f(void *content)
 int		main()
 {
 //	ft_atoi!!!!!!!
-/*	printf("1 %d\n", ft_atoi("   \n \t \f \v \r   42dhk42jsh\n"));
+	printf("1 %d\n", ft_atoi("   \n \t \f \v \r   42dhk42jsh\n"));
 	printf("1 %d\n", atoi("   \n \t \f \v \r   42dhk42jsh\n"));
 	printf("2 %d\n", ft_atoi("   \n \t \f \v \r   +42dhk42jsh\n"));
 	printf("2 %d\n", atoi("   \n \t \f \v \r   +42dhk42jsh\n"));
@@ -81,7 +81,10 @@ int		main()
 	printf("15 %d\n", ft_atoi("22222222222222222222"));
 	printf("15 %d\n", atoi("22222222222222222222"));
 	printf("16 %d\n", ft_atoi("-99999999999999999999999999             "));
-	printf("16 %d\n", atoi("-99999999999999999999999999             "));*/
+	printf("16 %d\n", atoi("-99999999999999999999999999             "));
+	printf("17 %d\n", ft_atoi("2222222222222222"));
+	printf("17 %d\n", atoi("2222222222222222"));
+
 
 
 
@@ -163,6 +166,36 @@ int		main()
 
 //	ft_memccpy!!!!!
 
+/*	char	src1[] = "test basic du memccpy !";
+	char	buff1[22];
+
+	char	src2[] = "test basic du memccpy !";
+	char	buff2[22];
+
+	memset(buff1, 0, sizeof(buff1));
+	memset(buff2, 0, sizeof(buff2));
+
+	char	*r1;
+	char	*r2;
+
+	if ((r1 = memccpy(buff1, src1, 'm', 22)) == NULL)
+		printf("memccpy - NULL\n");
+	else
+		printf("memccpy - %s\n", r1);
+
+	if ((r2 = ft_memccpy(buff2, src2, 'm', 22)) == NULL)
+		printf("ft_memccpy - NULL\n");
+	else
+		printf("ft_memccpy - %s\n", r2);
+	if ((r1 = memccpy("", src1, 'm', 0)) == NULL)
+		printf("memccpy - NULL\n");
+	else
+		printf("memccpy - %s\n", r1);
+
+	if ((r2 = ft_memccpy("", src2, 'm', 0)) == NULL)
+		printf("ft_memccpy - NULL\n");
+	else
+		printf("ft_memccpy - %s\n", r2);*/
 /*	unsigned char src1[] = "12345";
 	unsigned char src2[] = "12345";
 
@@ -189,6 +222,32 @@ int		main()
 //	printf("%s\n", src1);
 //	printf("%s\n", src2);
 
+
+/*	char    src[] = "test basic du memccpy !";
+    char    buff1[22];
+    char    *s;
+
+    memset(buff1, 0, sizeof(buff1));
+
+    if ((memccpy(buff1, src, 'm', 22)) == NULL)
+        printf("NULL\n");
+    else
+        printf("%s\n", buff1);
+    memset(buff1, 0, sizeof(buff1));
+    if ((ft_memccpy(buff1, src, 'm', 22)) == NULL)
+        printf("NULL\n");
+    else
+        printf("%s\n", buff1);
+    memset(buff1, 0, sizeof(buff1));
+    if ((memccpy("", src, 'm', 0)) == NULL)
+        printf("NULL\n");
+    else
+        printf("%s\n", buff1);
+    memset(buff1, 0, sizeof(buff1));
+    if ((ft_memccpy("", src, 'm', 0)) == NULL)
+        printf("NULL\n");
+    else
+        printf("%s\n", buff1);*/	
 
 //	ft_memmove
 
@@ -365,16 +424,20 @@ int		main()
 
 	printf("%s\n", strnstr(big, little, sizeof(big)));
 	printf("%s\n", ft_strnstr(big, little, sizeof(big)));*/
-/*	char	*s1 = "see FF your FF return FF now FF";
-	char	*s2 = "FF";
-	size_t	max = strlen(s1);*/
+/*	char	*s1 = "seeffyourreturnnow";
+	char	*s2 = "you";
+	size_t	max = strlen(s1);
 
-/*	char	*s1 = "MZIRIBMZIRIBMZE123";
-	char	*s2 = "MZIRIBMZE";
-	size_t	max1 = strlen(s2);
+	printf("%s\n", strnstr(s1, s2, max));
+	printf("%s\n", ft_strnstr(s1, s2, max));*/
 
-	printf("%s\n", strnstr(s1, s2, max1));
-	printf("%s\n", ft_strnstr(s1, s2, max1));
+
+/*	char s3[] = "MZIRIBMZIRIBMZE123";
+	char s4[] = "MZIRIBMZE";
+	max = strlen(s2);
+
+	printf("%s\n", strnstr(s3, s4, max));
+	printf("%s\n", ft_strnstr(s3, s4, max));
 
 	char	*s11 = "oh no not the empty string !";
 	char	*s22 = "";
@@ -436,12 +499,6 @@ int		main()
 
 	char		buf1[] = "jjz\0ggg";
 	char		buf2[] = "jjz\0ggg";
-//	buf1[9] = '\0';
-//	buf2[9] = '\0';
-	printf("строка: \"%s\"\n\n", str1);
-	printf("строка: \"%s\"\n\n", str2);
-	printf("буфер перед копированием: \"%s\"\n", buf1);
-	printf("буфер перед копированием: \"%s\"\n", buf2);
 
 	printf("%zu\n", sz1 = strlcat(buf1, str1, sizeof(buf1)));
 	printf("%zu\n", sz2 = ft_strlcat(buf2, str2, sizeof(buf2)));
@@ -451,18 +508,50 @@ int		main()
 	printf("буфер после копирования:  \"%s\"\n", buf1);
 	printf("буфер после копирования:  \"%s\"\n", buf2);*/
 
+/*	char	*str = "the cake is a lie !\0I'm hidden lol\r\n";
+	char	buff1[0xF00] = "there is no stars in the sky";
+	char	buff2[0xF00] = "there is no stars in the sky";
+	size_t	max = strlen(str) + 4;
 
+	printf("%zu\n", strlcat(buff1, str, max));
+	printf("%s\n", buff1);
+	printf("%zu\n", ft_strlcat(buff2, str, max));
+	printf("%s\n", buff2);
 
+	char	*str1 = "the cake is a lie !\0I'm hidden lol\r\n";
+	char	buff11[0xF00] = "there is no stars in the sky";
+	char	buff22[0xF00] = "there is no stars in the sky";
+	size_t	max1 = strlen(str1) + 4;
 
+	printf("%zu\n", strlcat(buff11, str1, max1));
+	printf("%s\n", buff11);
+	printf("%zu\n", ft_strlcat(buff22, str1, max1));
+	printf("%s\n", buff22);
 
+	char	s11[4] = "";
+	char	s22[4] = "";
+	printf("%zu\n", strlcat(s11, "thx to ntoniolo for this test !", 4));
+	printf("%s\n", s11);
+	printf("%zu\n", ft_strlcat(s22, "thx to ntoniolo for this test !", 4));
+	printf("%s\n", s22);
+
+	char	*str11 = "the cake is a lie !\0I'm hidden lol\r\n";
+	char	buff111[0xF00] = "there is no stars in the sky";
+	char	buff222[0xF00] = "there is no stars in the sky";
+	size_t	max11 = strlen(str11) + strlen(buff111);
+
+	printf("%zu\n", strlcat(buff111, str11, max11));
+	printf("%s\n", buff111);
+	printf("%zu\n", ft_strlcat(buff222, str11, max11));
+	printf("%s\n", buff222);*/
 
 //	ft_substr
 
-	char str[] = "aabcdefdgdhgbcbd";
+/*	char str[] = "aabcdefdgdhgbcbd";
 	char c = 'c';
 	size_t len = 5;
 
-	printf("%s\n", ft_substr(str, c, len));
+	printf("%s\n", ft_substr(str, c, len));*/
 
 
 
@@ -578,7 +667,15 @@ int		main()
 	while (dst[i])
 	{
 		printf("%s\n", dst[i++]);
-	}*/
+	}
+
+
+	char s1[] = "      split       this for   me  !       ";
+	char **dst1;
+	i = 0;
+	dst = ft_split(s1, ' ');
+	while (dst[i])
+		printf("%s\n", dst[i++]);*/
 
 //	ft_strtrim
 	
@@ -662,6 +759,18 @@ int		main()
 	free(lst1);
 	free(lst2);
 	free(lst3);*/
+
+/*	t_list	*l;
+	l = ft_lstnew("nyacat");
+	t_list	*n;
+	n = ft_lstnew("OK");
+
+	ft_lstadd_front(&l, n);
+
+    if (l == n && !strcmp(l->content, "OK"))
+		printf("Perfect\n");
+	else
+		printf("Fail\n");*/
 
 
 	return 0;

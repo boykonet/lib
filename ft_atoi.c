@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.c                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkarina <gkarina@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -44,8 +44,10 @@ int			ft_atoi(const char *str)
 	if (*str == '-' || *str == '+')
 	{
 		if (*str++ == '-')
+		{
 			flag = -1;
-		count++;
+			count++;
+		}
 	}
 	digit = ft_atoi_in(str, flag, count);
 	return (digit * flag);

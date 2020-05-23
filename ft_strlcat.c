@@ -14,29 +14,33 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char		*d;
-	const char	*s;
-	size_t		size;
-	size_t		lendst;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				size;
+	size_t				lendst;
+	size_t				lensrc;
 
-	d = (char*)dst;
-	s = (const char*)src;
-	if (d == NULL || s == NULL || (*d == '\0') || (*s == '\0'))
+	d = (unsigned char*)dst;
+	s = (const unsigned char*)src;
+	if (d == NULL || s == NULL)
 		return (0);
 	size = dstsize;
-	while (*d++ != '\0')
-		size--;
-	lendst = d - dst;
+	lendst = ft_strlen(dst);
+	lensrc = ft_strlen(src);
 	if (lendst >= dstsize)
-		return (dstsize);
-	while (--size && *s)
-		*d++ = *s++;
+		return (lensrc + dstsize);
+	if (dstsize > lendst)
+	{
+		d = &d[lendst];
+		size = size - lendst;
+		while (--size && *s)
+			*d++ = *s++;
+		*d = '\0';
+	}
 	if (size == 0)
 	{
 		if (dstsize != 0)
 			*d = '\0';
-		while (*s)
-			s++;
 	}
-	return (lendst + s - src);
+	return (lensrc + lendst);
 }

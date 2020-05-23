@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	count = 0;
 	if (src == NULL || len == 0 || *src == '\0')
 		return (NULL);
-	while (*src != (char const)start && *src != '\0')
+	while (start-- && *src != '\0')
 		src++;
 	if (*src == '\0')
 		return (NULL);
