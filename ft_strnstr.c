@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	*ft_strnstr_logic(const char *haystack, const char *needle, size_t l)
+static char	*ft_strnstr_log(const char *haystack, const char *needle, size_t l)
 {
 	const char		*h;
 	const char		*n;
@@ -39,7 +39,7 @@ static char	*ft_strnstr_logic(const char *haystack, const char *needle, size_t l
 	return (NULL);
 }
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	const char		*h;
 	const char		*n;
@@ -50,7 +50,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (NULL);
 	if (len == 0 || *n == '\0')
 		return ((char*)h);
-	if ((h = ft_strnstr_logic(haystack, needle, len)) != NULL)
+	if ((h = ft_strnstr_log(haystack, needle, len)) != NULL)
 		return ((char*)h);
 	return (NULL);
 }

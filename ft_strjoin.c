@@ -19,11 +19,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	strlen2;
 	size_t	count;
 
+	count = 0;
+	if (s1 == NULL || s2 == NULL || *s1 == '\0' || *s2 == '\0')
+		return (NULL);
 	strlen1 = ft_strlen(s1);
 	strlen2 = ft_strlen(s2);
-	count = 0;
-	if (s1 == NULL || s2 == NULL || (*s1 == '\0') || (*s2 == '\0'))
-		return (NULL);
 	dst = (char*)malloc(sizeof(char) + (strlen1 + strlen2 + 1));
 	if (dst == NULL)
 		return (NULL);

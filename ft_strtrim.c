@@ -20,9 +20,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t		i;
 
 	i = 0;
-	s2 = &s1[ft_strlen(s1)];
 	if (s1 == NULL || set == NULL)
 		return (NULL);
+	count = ft_strlen(s1);
+	s2 = &s1[count];
 	while (*s1 != '\0' && (ft_strchr(set, *s1) != NULL))
 		s1++;
 	while (s2 != s1 && (ft_strrchr(set, *s2) != NULL))

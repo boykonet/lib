@@ -50,7 +50,7 @@ void	ft_f(void *content)
 int		main()
 {
 //	ft_atoi!!!!!!!
-	printf("1 %d\n", ft_atoi("   \n \t \f \v \r   42dhk42jsh\n"));
+/*	printf("1 %d\n", ft_atoi("   \n \t \f \v \r   42dhk42jsh\n"));
 	printf("1 %d\n", atoi("   \n \t \f \v \r   42dhk42jsh\n"));
 	printf("2 %d\n", ft_atoi("   \n \t \f \v \r   +42dhk42jsh\n"));
 	printf("2 %d\n", atoi("   \n \t \f \v \r   +42dhk42jsh\n"));
@@ -84,7 +84,14 @@ int		main()
 	printf("16 %d\n", atoi("-99999999999999999999999999             "));
 	printf("17 %d\n", ft_atoi("2222222222222222"));
 	printf("17 %d\n", atoi("2222222222222222"));
-
+	printf("18 %d\n", ft_atoi("-9223372036854775808"));
+	printf("18 %d\n", atoi("-9223372036854775808"));
+	printf("19 %d\n", ft_atoi("9223372036854775807"));
+	printf("19 %d\n", atoi("9223372036854775807"));
+	printf("20 %d\n", ft_atoi("-922337203685477580"));
+	printf("20 %d\n", atoi("-922337203685477580"));
+	printf("21 %d\n", ft_atoi("922337203685477580"));
+	printf("21 %d\n", atoi("922337203685477580"));*/
 
 
 
@@ -658,6 +665,18 @@ int		main()
 
 //	ft_split
 
+/*	int i = 0;
+	char    *s = "                  olol";
+
+    char    **dst1 = ft_split(s, ' ');
+    while (dst1[i])
+	{
+//		if (dst1[i] == NULL)
+//			printf("NULL\n");
+//		else
+		printf("%s\n", dst1[i]);
+		i++;
+	}*/
 /*	char s[] = "111,222,333,,";
 	char **dst;
 	int i;
@@ -771,6 +790,10 @@ int		main()
 		printf("Perfect\n");
 	else
 		printf("Fail\n");*/
+	t_list	*l = lstnew(strdup("nyancat"));
+
+	l->next = lstnew("#TEST#");
+	ft_lstclear(&l, lstdelone_f);
 
 
 	return 0;

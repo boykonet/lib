@@ -24,10 +24,7 @@ char	*ft_strdup(const char *s1)
 		i++;
 	dupl = (char*)malloc(sizeof(char) * (i + 1));
 	if (dupl == NULL)
-	{
-		errno = ENOMEM;
 		return (NULL);
-	}
 	i = 0;
 	while (s1[i] != '\0')
 	{

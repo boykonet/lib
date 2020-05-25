@@ -19,9 +19,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t		size;
 	size_t		count;
 
+	count = 0;
 	src = s;
 	size = len;
-	count = 0;
 	if (src == NULL || len == 0 || *src == '\0')
 		return (NULL);
 	while (start-- && *src != '\0')

@@ -19,11 +19,12 @@ static int	ft_atoi_in(const char *str, int flag, int count)
 	digit = 0;
 	while (*str && (*str >= '0' && *str <= '9'))
 	{
-		if (count++ >= 19 && flag == 1)
+		if (count >= 19 && flag == 1)
 			return (-1);
-		if (count++ > 20 && flag == -1)
+		if (count > 20 && flag == -1)
 			return (0);
 		digit = digit * 10 + *str++ - '0';
+		count++;
 	}
 	return (digit);
 }
