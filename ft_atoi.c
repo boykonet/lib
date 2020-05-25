@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_atoi_in(const char *str, int flag, int count)
+static int	ft_atoi_logic(const char *str, int flag, int count)
 {
 	int		digit;
 
@@ -50,6 +50,6 @@ int			ft_atoi(const char *str)
 			count++;
 		}
 	}
-	digit = ft_atoi_in(str, flag, count);
+	digit = ft_atoi_logic(str, flag, count);
 	return (digit * flag);
 }

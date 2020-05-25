@@ -37,19 +37,19 @@ static size_t	ft_split_count(const char *s, const char c)
 		return (count);
 	while (s[i] != '\0')
 	{
-		if (s[i] != c)
+		if (s[i] != c && s[i] != '\0')
 		{
 			count++;
-			while (s[i] != c)
+			while (s[i] != c && s[i] != '\0')
 				i++;
 		}
-		while (s[i] == c)
+		while (s[i] == c && s[i] != '\0')
 			i++;
 	}
 	return (count);
 }
 
-static char		**ft_split_logic(char **d, char const *s, const char v, size_t ch)
+static char		**ft_split_log(char **d, char const *s, const char v, size_t ch)
 {
 	char const	*src;
 	size_t		i;
@@ -88,7 +88,7 @@ char			**ft_split(char const *s, char c)
 	ch = ft_split_count(s, c);
 	if ((dst = (char**)malloc(sizeof(char*) * (ch + 1))) == NULL)
 		return (NULL);
-	if ((dst = ft_split_logic(dst, s, c, ch)) == NULL)
+	if ((dst = ft_split_log(dst, s, c, ch)) == NULL)
 		return (NULL);
 	return (dst);
 }
