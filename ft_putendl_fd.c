@@ -23,4 +23,6 @@ void	ft_putendl_fd(char *s, int fd)
 			write(fd, &s[i++], 1);
 		write(fd, "\n", 1);
 	}
+	else
+		write(fd, "\n", 1);
 }

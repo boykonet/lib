@@ -48,8 +48,10 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	n = needle;
 	if (h == NULL || n == NULL || (!h && !n))
 		return (NULL);
-	if (len == 0 || *n == '\0')
+	if (*n == '\0')
 		return ((char*)h);
+	if (len == 0)
+		return (NULL);
 	if ((h = ft_strnstr_log(haystack, needle, len)) != NULL)
 		return ((char*)h);
 	return (NULL);

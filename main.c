@@ -426,22 +426,22 @@ int		main()
 
 //	ft_strnstr
 
-/*	char	big[30] = "Thid s id  horosho sdfffid  ";
+	char	big[30] = "Thid s id  horosho sdfffid  ";
 	char	little[] = "id  horosh";
 
 	printf("%s\n", strnstr(big, little, sizeof(big)));
-	printf("%s\n", ft_strnstr(big, little, sizeof(big)));*/
-/*	char	*s1 = "seeffyourreturnnow";
+	printf("%s\n", ft_strnstr(big, little, sizeof(big)));
+	char	*s1 = "seeffyourreturnnow";
 	char	*s2 = "you";
 	size_t	max = strlen(s1);
 
 	printf("%s\n", strnstr(s1, s2, max));
-	printf("%s\n", ft_strnstr(s1, s2, max));*/
+	printf("%s\n", ft_strnstr(s1, s2, max));
 
 
-/*	char s3[] = "MZIRIBMZIRIBMZE123";
+	char s3[] = "MZIRIBMZIRIBMZE123";
 	char s4[] = "MZIRIBMZE";
-	max = strlen(s2);
+	max = strlen(s3);
 
 	printf("%s\n", strnstr(s3, s4, max));
 	printf("%s\n", ft_strnstr(s3, s4, max));
@@ -457,7 +457,7 @@ int		main()
 	size_t	max3 = strlen(s111);
 
 	printf("%s\n", strnstr(s111, s111, max3));
-	printf("%s\n", ft_strnstr(s111, s111, max3));*/
+	printf("%s\n", ft_strnstr(s111, s111, max3));
 
 //	ft_strncmp
 
@@ -790,10 +790,33 @@ int		main()
 		printf("Perfect\n");
 	else
 		printf("Fail\n");*/
-	t_list	*l = lstnew(strdup("nyancat"));
 
-	l->next = lstnew("#TEST#");
-	ft_lstclear(&l, lstdelone_f);
+	/*    t_list    *l = ft_lstnew("nyacat");
+    t_list    *n = ft_lstnew("OK");
+
+    ft_lstadd_back(&l, n);
+    if (l->next == n && !strcmp(l->next->content, "OK"))
+        printf("Perfect\n");*/
+ /*   t_list    *l = ft_lstnew("nyacat");
+    t_list    *n = ft_lstnew("OK");
+
+    ft_lstadd_back(&l, n);
+    if (l->next == n && !strcmp(l->next->content, "OK"))
+    {
+        free(l->next);
+        free(l);
+        printf("Perfect\n");
+    }*/
+ /*   t_list    *l =  NULL;
+    t_list    *n = ft_lstnew("OK");
+
+    ft_lstadd_back(&l, n);
+    if (l == n && !strcmp(l->content, "OK"))
+    {
+        free(l->next);
+        free(l);
+        printf("Perfect\n");
+    }*/
 
 
 	return 0;

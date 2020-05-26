@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	count;
 
 	count = 0;
-	if (s1 == NULL || s2 == NULL || *s1 == '\0' || *s2 == '\0')
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	strlen1 = ft_strlen(s1);
 	strlen2 = ft_strlen(s2);

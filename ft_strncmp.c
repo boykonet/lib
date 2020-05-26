@@ -22,18 +22,15 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	str2 = (const unsigned char*)s2;
 	len = n;
 	if (str1 == NULL || str2 == NULL)
-		return (0);
-	if (*str1 == '\0' || *str2 == '\0')
-		return (*str1 - *str2);
+		return (-1);
 	if (len == 0)
 		return (0);
-	while (len && *str1 != '\0' && *str2 != '\0' && (*str1 == *str2))
+	else
 	{
-		if (*str1 == *str2)
+		while (--len && *str1 != '\0' && *str2 != '\0' && (*str1 == *str2))
 		{
 			str1++;
 			str2++;
-			len--;
 		}
 	}
 	return (*str1 - *str2);
