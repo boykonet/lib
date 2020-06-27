@@ -41,18 +41,18 @@ static char	*ft_strnstr_log(const char *haystack, const char *needle, size_t l)
 
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	const char		*h;
-	const char		*n;
+	char	*h;
+	char	*n;
 
-	h = haystack;
-	n = needle;
+	h = (char*)haystack;
+	n = (char*)needle;
 	if (h == NULL || n == NULL || (!h && !n))
 		return (NULL);
 	if (*n == '\0')
-		return ((char*)h);
+		return (h);
 	if (len == 0)
 		return (NULL);
 	if ((h = ft_strnstr_log(haystack, needle, len)) != NULL)
-		return ((char*)h);
+		return (h);
 	return (NULL);
 }

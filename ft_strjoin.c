@@ -27,13 +27,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	dst = (char*)malloc(sizeof(char) + (strlen1 + strlen2 + 1));
 	if (dst == NULL)
 		return (NULL);
-	while (*s1 || *s2)
-	{
-		while (*s1)
-			dst[count++] = *s1++;
-		while (*s2)
-			dst[count++] = *s2++;
-	}
+	while (*s1)
+		dst[count++] = *s1++;
+	while (*s2)
+		dst[count++] = *s2++;
 	dst[count] = '\0';
 	return (dst);
 }

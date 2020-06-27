@@ -15,22 +15,19 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*dupl;
-	int		i;
+	int		count;
 
-	i = 0;
 	if (s1 == NULL)
 		return (NULL);
-	while (s1[i] != '\0')
-		i++;
-	dupl = (char*)malloc(sizeof(char) * (i + 1));
-	if (dupl == NULL)
+	count = ft_strlen(s1);
+	if ((dupl = (char*)malloc(sizeof(char) * (count + 1))) == NULL)
 		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
+	count = 0;
+	while (s1[count] != '\0')
 	{
-		dupl[i] = s1[i];
-		i++;
+		dupl[count] = s1[count];
+		count++;
 	}
-	dupl[i] = '\0';
+	dupl[count] = '\0';
 	return (dupl);
 }

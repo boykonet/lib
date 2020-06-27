@@ -16,19 +16,19 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*dst;
 	size_t	len;
+	size_t	count;
 
-	if (s == NULL || *s == '\0')
+	if (!s || !f)
 		return (NULL);
 	len = ft_strlen(s);
-	dst = (char*)malloc(sizeof(char) * (len + 1));
-	if (dst == NULL)
+	if ((dst = (char*)malloc(sizeof(char) * (len + 1))) == NULL)
 		return (NULL);
-	len = 0;
-	while (s[len] != '\0')
+	count = 0;
+	while (count < len)
 	{
-		dst[len] = (*f)(len, s[len]);
-		len++;
+		dst[count] = f(count, s[count]);
+		count++;
 	}
-	dst[len] = '\0';
+	dst[count] = '\0';
 	return (dst);
 }
